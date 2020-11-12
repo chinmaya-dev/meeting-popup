@@ -1,0 +1,165 @@
+<div class="row">
+    <div class="col-md-12" style="margin:0 auto;">
+        <div class="panel panel-default" style="margin-top:40px;">
+
+            <div class="panel-heading" style="background-color: transparent !important;">
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div style="display: inline;">
+                            <div>
+                                <div class='box'></div>
+                            </div>
+                            <div style="margin-left:55px;">
+                                <p style="font-size:small;">Leads</p>
+                                <p style="font-size:large; margin-top:-5px;">Recently Viewed</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1 pull-right">
+                        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+                            data-target="#myModal"><span style="font-size: medium;">New</span></button>
+                    </div>
+                </div>
+                <p style="font-size: x-small;">O items . Updated A Few Seconds Ago</p>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12" style="padding-left: 0% !important;padding-right: 0% !important;">
+                        <table class="table table-striped" datatable [dtOptions]="dtOptions" style="border: none;">
+                            <thead>
+                                <tr>
+                                    <th><input type="checkbox" class="custom-control-input" id="customCheck1"></th>
+                                    <th> Name</th>
+                                    <th>Title</th>
+                                    <th>Company</th>
+                                    <th>Phone</th>
+                                    <th>Mobile</th>
+                                    <th>Email</th>
+                                    <th>Load Status</th>
+                                    <th>Owner Alias</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let group of data">
+                                    <td></td>
+                                    <td>{{group.name}}</td>
+                                    <td>{{group.title}}</td>
+                                    <td>{{group.company}}</td>
+                                    <td>{{group.phone}}</td>
+                                    <td>{{group.mobile}}</td>
+                                    <td>{{group.email}}</td>
+                                    <td>{{group.loadstatus}}</td>
+                                    <td>{{group.owner}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title text-center">New Meeting</h4>
+            </div>
+            <div class="modal-body">
+                <p class="text-center">Meeting Information</p>
+                <form>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="first_name">*Meeting Subject</label>
+                                <input type="text" class="form-control" id="meetingSub" name="meetingSub">
+                            </div>
+                            <div class="form-group">
+                                <label for="first_name">Date</label>
+                                <div class='input-group date' id='datetimepicker1'>
+                                    <input type='text' class="form-control" />
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+                            <script type="text/javascript">
+                                $(function () {
+                                    $('#datetimepicker1').datetimepicker();
+                                });
+                            </script>
+
+                            <div class="form-group">
+                                <label for="first_name">City</label>
+                                <select class="form-control" id="exampleFormControlSelect1">
+                                    <option>Select city..</option>
+                                    <option>Odisha</option>
+                                    <option>Chennai</option>
+                                    <option>Bangalore</option>
+                                    <option>Kerela</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="first_name">Meeting Agenda</label>
+                                <input type="text" class="form-control" id="agenda" name="agenda">
+                            </div>
+                            <div class="form-group">
+                                <label for="first_name">Add Attendees</label>
+                                <input type="text" class="form-control" id="attendees" name="attendees">
+                            </div>
+                            <div class="form-group">
+                                <label for="first_name">Message Box</label>
+                                <input type="text" class="form-control" id="messageBox" name="messageBox">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="first_name">*Oppurtunity owner</label>
+                                <input type="text" class="form-control" id="oppurtunity" name="oppurtunity"
+                                    value="John Deo">
+                            </div>
+                            <div class="form-group">
+                                <label for="first_name">Starting Time</label>
+                                <input type="text" class="form-control" id="startTime" name="startTime">
+                            </div>
+                            <div class="form-group">
+                                <label for="first_name">Ending Time</label>
+                                <input type="text" class="form-control" id="endTime" name="endTime">
+                            </div>
+                            <div class="form-group">
+                                <label for="first_name">Intent(%)</label>
+                                <input type="text" class="form-control" id="intent" name="intent">
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="staticEmail" class="col-md-6">Meeting Status</label>
+                                <div class="col-md-6 pull-right">
+                                    <input type="text" readonly class="form-control" id="meetingStat" value="Accepted"
+                                        style="background-color: greenyellow !important;">
+                                </div>
+                            </div>
+
+
+                            <button type="button" class="btn-outline danger btn-lg">Generate Meeting Link</button>
+
+
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary pull-right">Submit</button>
+            </div>
+        </div>
+
+    </div>
+</div>

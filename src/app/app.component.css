@@ -49,9 +49,7 @@ body {
 }
 
 
-table.dataTable thead th{
-  border-bottom: none !important;
-}
+
 
 #tabs{
 	background: #FFFFFF;
@@ -77,66 +75,9 @@ table.dataTable thead th{
   border-bottom: 3px solid !important;
  
 }
-.box {
-  float: left;
-  height: 45px;
-  width: 45px;
-  border-radius: 8px;
-  clear: both;
-  background-color:  #ffd480;
-}
-.outer {
-  width: 1px;
-  height: 100%;
-  margin: auto;
-  position: relative;
-  overflow: hidden;
-}
-.inner {
-  position: absolute;
-  width:100%;
-  height: 40%;
-  background: grey;
-  top: 30%;
-  
-}
-.modal-body input{
-  background-color:#f8f9fa !important;
-}
-/* 
-.nav-pills li:hover{
-  
-  font-weight: bold;
-} */
-/* #tabs .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
-   
-} */
-#tabs .nav-tabs .nav-link {
-    border: 1px solid transparent;
-    border-top-left-radius: .25rem;
-    border-top-right-radius: .25rem;
-    color: #eee;
-    font-size: 20px;
-}
-.btn-outline{
-border: 2px solid black;
-  background-color: white;
-  color: black;
-  
-  font-size: 14px;
-  cursor: pointer;
-}
 
-/* Red */
-.danger {
-  border-color: #f44336;
-  color: red;
-}
 
-.danger:hover {
-  background: #f44336;
-  color: white;
-}
+
 
   
   @media (min-width: 768px) {
